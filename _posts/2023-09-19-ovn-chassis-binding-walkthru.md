@@ -226,8 +226,8 @@ What happens then is that `ovn-northd` updates the fields in the corresponding
 1. The `requested_chassis` field is set to refer to the `Chassis` that
    corresponds to the first element of the list.
 2. The new[^2] `additional_requested_chassis`[^3] field is set to refer to a
-   list of the `Chassis` records that correspond to the next chassis names in
-   the options.[^4]
+   list of the `Chassis` records that correspond to the rest of chassis names
+   from the `options`.[^4]
 
 Once `Port_Binding` is updated, each `ovn-controller` that has an OVS interface
 with the corresponding `exernal_ids:iface-id` name will claim the port as
