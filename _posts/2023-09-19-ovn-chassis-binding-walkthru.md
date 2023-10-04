@@ -6,7 +6,9 @@ tags: [ovn, live-migration]
 ---
 
 In this post, I will walk you through the process that OVN follows to determine
-chassis to bind a particular port at.
+chassis to bind a particular port at. Note that while the mechanics is common
+for different CMS, I had OpenStack in my mind, and some OpenStack specific
+artifacts could creep into the narrative. For this, I am sorry.
 
 ## Introduction
 
@@ -27,9 +29,9 @@ elaborate.
 
 The way `ovn-controller` works is, it monitors all OVS interfaces that are
 attached to its integration bridge (usually, `br-int`). Whenever a new
-interface pops up on the bridge, it checks its `external_ids:iface-id` key and,
-if a matching `Port_Binding` with the same name exists in the OVN Southbound
-database, then `ovn-controller` "claims" the port for itself.
+OVS interface pops up on the bridge, it checks its `external_ids:iface-id` key
+and, if a matching `Port_Binding` with the same name exists in the OVN
+Southbound database, then `ovn-controller` "claims" the port for itself.
 
 The OVS interface that carries `external_ids:iface-id` is created by CMS (e.g.
 in OpenStack, it's created by Nova Compute,
@@ -84,8 +86,9 @@ up                  : false
 
 In the meantime, the CMS may also create an OVS interface on the chassis of
 choice. The `ovn-controller` instance running on the chassis will detect this
-event, pull the `Port_Binding` record with the corresponding name and, if
-`requested_chassis` field is set, will compare its own `Chassis` to the
+event, register a watch condition on `Port_Binding` table for the corresponding
+`<OVSInterface>.external_ids:iface-id`, receive the PB record and, if
+its `requested_chassis` field is set, will compare its own `Chassis` to the
 requested one. If they don't match, it will ignore the interface, meaning that
 the interface OpenFlow flows won't be configured.
 
@@ -102,7 +105,8 @@ actions are taken.
    will allow the workload that uses the port to connect to the network.
 2. **Southbound database is updated to confirm that the port is configured.**
    This feedback can then be used by the CMS to indicate to the port owner that
-   the port is ready for use.
+   the port is ready for use. (This step is executed only when the first one is
+   completed.)
 
 There are several `Port_Binding` fields that are updated as part of the
 process. Among them are:
@@ -111,9 +115,9 @@ process. Among them are:
    corresponds to the current chassis. In case when `options:requested-chassis`
    is used, both `requested_chassis` and `chassis` fields of the binding will have
    identical values.
-2. **`up`**: It is set to `true`. This information is then proxied back to the
-   Northbound database that is visible to CMS (and - through the integration
-   driver - to the CMS end user).
+2. **`up`**: It is set to `true`[^5]. This information is then proxied back to
+   the Northbound database that is visible to CMS (and - through the
+   integration driver - to the CMS end user).
 
 ```shell
 $ ovn-sbctl list Port_Binding
@@ -182,8 +186,8 @@ In OpenStack, Nova Compute first migrates the running virtual machine to
 another hypervisor; then, once the completion of the process is detected, it
 informs the other OpenStack components, specifically, Storage (Cinder) and
 Network (Neutron), about the change in the port binding location. At this
-point, each service propagates the change through its databases (Neutron -> OVN
-NB -> OVN SB) and, eventually, configure the port in the new chassis to provide
+point, each service propagates the change through its databases (Neutron → OVN
+NB → OVN SB) and, eventually, configure the port in the new chassis to provide
 connectivity for the virtual machine running in the destination host.
 
 The problem with this approach is that, until
@@ -206,8 +210,8 @@ the port on the destination hypervisor long after the virtual machine is
 already running there. There is no hard reason for this to happen though.
 
 This is why we introduced a new feature in OVN called Multichassis port
-bindings. The basic idea behind it is that a particular port binding can now be
-bound to more than one chassis.
+bindings. The idea behind it is that a particular port binding can now be bound
+to more than one chassis.
 
 In Live Migration scenario, this allows the `ovn-controller` instance that is
 running on the destination hypervisor to start configuring the port long before
@@ -298,3 +302,6 @@ tables.
       that allows to define more than two chassis in the list. Such use is
       beyond the scope for this blog post.
 
+[^5]: It will set to `true` only if the field is set to `false` already. The
+      reason for this is backwards compatibility with versions of OVN databases
+      that didn't have the field populated.
