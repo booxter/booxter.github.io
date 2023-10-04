@@ -7,7 +7,7 @@ tags: [ovn, live-migration]
 
 In this post, I will walk you through the process that OVN follows to determine
 chassis to bind a particular port at. Note that while the mechanics is common
-for different CMS, I had OpenStack in my mind, and some OpenStack specific
+for different CMS[^6], I had OpenStack in my mind, and some OpenStack specific
 artifacts could creep into the narrative. For this, I am sorry.
 
 ## Introduction
@@ -305,3 +305,5 @@ tables.
 [^5]: It will set to `true` only if the field is set to `false` already. The
       reason for this is backwards compatibility with versions of OVN databases
       that didn't have the field populated.
+
+[^6]: Cloud Management System.
