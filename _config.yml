@@ -20,7 +20,7 @@ timezone: EST
 
 title: Ihar # the main title
 
-tagline: . # it will display as the sub-title
+tagline: 'Networking game contributes many animals. // RFC 826' # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Ihar's Blog. Open Source, OpenStack, Kubernetes, Open vSwitch, OVN, Linux, Red Hat.
