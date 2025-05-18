@@ -115,8 +115,10 @@ The command will start validation of the `<PR_NUM>` pull request:
   `ssh://linux-x86-builder`, and `ssh://darwin-builder`).
 - also using the local `rosetta-builder` for `x86_64-linux` and `aarch64-linux`
   platforms (with a lower priority than Linux community builders).
-- tests and packages that require nested virtualization will only build on the
-  Linux community builders (`kvm,nixos-test`).
+- tests and packages that require nested virtualization will not run on
+- `rosetta-builder` (no `kvm,nixos-test`). (The local daemon probably
+  [will](https://nixcademy.com/posts/running-nixos-integration-tests-on-macos/)
+  run tests though!)
 - packages that require enormous resources will not be scheduled to
   `rosetta-builder` (no `big-parallel` label).
 
