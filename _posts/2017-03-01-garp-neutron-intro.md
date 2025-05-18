@@ -1,5 +1,10 @@
 ---
 title: "Gratuitous ARP in OpenStack Neutron with ML2/OVS"
+description: "
+  This post is an introduction to gratuitous ARP in OpenStack Neutron.
+  It describes the protocol and its usage in OpenStack Neutron.
+  The next post will discuss some of the issues we had with it.
+  "
 date: 2017-03-01 15:00:00 +0700
 tags: [openstack, ovs, neutron, kernel]
 ---

@@ -1,5 +1,9 @@
 ---
 title: "Setting up nix-darwin machine for community builders"
+description: "
+  This post describes how to set up a nix-darwin machine to use community
+  builders for Nix upstream development.
+  "
 date: 2025-05-17 22:00:00 +0700
 tags: [nix, darwin]
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Gratuitous ARP in OpenStack Neutron with ML2/OVS - Part 2"
+description: "A OpenStack ML2/OVS trip to kernel gratuitous ARP packet handling code and back."
 date: 2017-03-01 16:00:00 +0700
 tags: [openstack, ovs, neutron, kernel]
 ---
