@@ -6,7 +6,7 @@ description: "
   live migration.
   "
 date: 2022-11-28 00:00:00 +0700
-tags: [ovs, ovn, openstack, video]
+tags: [ovs, ovn, openstack, networking, video]
 ---
 
 <iframe width="560" height="315"

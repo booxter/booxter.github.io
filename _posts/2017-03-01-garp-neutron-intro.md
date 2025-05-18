@@ -6,7 +6,7 @@ description: "
   The next post will discuss some of the issues we had with it.
   "
 date: 2017-03-01 15:00:00 +0700
-tags: [openstack, ovs, neutron, kernel]
+tags: [openstack, ovs, neutron, networking, kernel]
 ---
 
 This and the [next](../garp-neutron-war-story) posts are an adoption of my old

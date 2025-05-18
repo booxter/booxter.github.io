@@ -5,7 +5,7 @@ description: "
   `oslo.config` behavior and proposes a directory-based configuration for RDO
   service RPM packages, specifically for Neutron.
   "
-date: 2023-12-19 00:00:00 +0700
+date: 2016-02-15 00:00:00 +0700
 tags: [neutron, openstack, video]
 ---
 

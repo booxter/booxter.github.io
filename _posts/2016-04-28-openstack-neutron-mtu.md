@@ -1,13 +1,12 @@
 ---
-title: "Video: Protocol correctness validation in OVS/OVN test suites"
+title: "Video: On issues with Neutron MTU handling"
 description: "
-  Recording of my lightning talk at OVS conference 2023. The talk is about the
-  OVN test suite life quality improvement using `scapy` that allows to express
-  network protocol expectations and generate packets to inject in a symbolic
-  form.
+  Recording of a talk at OpenStack Summit from 2016. The talk is about issues
+  with MTU handling in Neutron and how they were solved to accommodate for
+  heterogeneous tunneling solutions used in the same OpenStack cluster.
   "
-date: 2023-12-19 00:00:00 +0700
-tags: [ovs, ovn, networking, video]
+date: 2016-04-28 00:00:00 +0700
+tags: [openstack, neutron, networking, video]
 ---
 
 <iframe width="560" height="315"

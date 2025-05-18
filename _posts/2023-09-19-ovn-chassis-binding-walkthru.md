@@ -6,7 +6,7 @@ description: "
   they work.
   "
 date: 2023-09-19 15:00:00 +0700
-tags: [ovs, ovn]
+tags: [ovs, ovn, networking]
 ---
 
 In this post, I will walk you through the process that OVN follows to determine
