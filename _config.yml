@@ -13,7 +13,7 @@ baseurl: ""
 lang: en
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: EST
+timezone: America/New_York
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -31,9 +31,6 @@ url: "https://ihar.dev"
 github:
   username: booxter # change to your github username
 
-twitter:
-  username: ihar_hrachyshka # change to your twitter username
-
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
@@ -41,7 +38,6 @@ social:
   email: me@ihar.dev # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/ihar_hrachyshka # change to your twitter homepage
     - https://github.com/booxter # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
