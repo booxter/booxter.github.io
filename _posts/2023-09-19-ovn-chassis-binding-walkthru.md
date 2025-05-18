@@ -1,5 +1,5 @@
 ---
-title: "Walk through: OVN Chassis Binding Process"
+title: "OVN Chassis Binding Process"
 description: "
   This post explains how ovn-controller binds ports to chassis. It also
   describes the new multi-chassis port bindings, why they are needed, and how

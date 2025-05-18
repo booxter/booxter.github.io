@@ -17,4 +17,4 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Slides [here](/assets/Live-migration-with-OVN.pdf).
 
-Also see: [Walk through: OVN Chassis Binding Process](../ovn-chassis-binding-walkthru)
+Also see: [OVN Chassis Binding Process](../ovn-chassis-binding-walkthru)
