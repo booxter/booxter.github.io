@@ -1,8 +1,7 @@
 ---
 title: "Walk through: OVN Chassis Binding Process"
 date: 2023-09-19 15:00:00 +0700
-categories: [OVN]
-tags: [ovn, live-migration]
+tags: [ovs, ovn]
 ---
 
 In this post, I will walk you through the process that OVN follows to determine

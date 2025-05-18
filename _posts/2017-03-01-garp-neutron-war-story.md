@@ -1,8 +1,7 @@
 ---
 title: "Gratuitous ARP in OpenStack Neutron with ML2/OVS - Story"
 date: 2017-03-01 16:00:00 +0700
-categories: [OpenStack]
-tags: [neutron, kernel, war-story]
+tags: [openstack, ovs, neutron, kernel]
 ---
 
 This is a continuation of the second post in the series on GARP and Neutron.
