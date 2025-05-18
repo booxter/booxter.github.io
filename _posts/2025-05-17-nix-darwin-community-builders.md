@@ -1,8 +1,7 @@
 ---
 title: "Setting up nix-darwin machine for community builders"
 date: 2025-05-17 22:00:00 +0700
-categories: [Nix]
-tags: [nix, macos]
+tags: [nix, darwin]
 ---
 
 It took me a while to figure out how to set up a
