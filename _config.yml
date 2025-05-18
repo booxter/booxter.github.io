@@ -18,12 +18,12 @@ timezone: America/New_York
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Ihar # the main title
+title: "ihar || booxter" # the main title
 
 tagline: 'Networking game contributes many animals. // RFC 826' # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  Ihar's Blog. Open Source, OpenStack, Kubernetes, Open vSwitch, OVN, Linux, Red Hat.
+  Ihar's Blog. Open Source, OpenStack, Kubernetes, Open vSwitch, OVN, Linux, Nix, Red Hat.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://ihar.dev"
